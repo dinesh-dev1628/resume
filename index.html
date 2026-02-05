@@ -2,253 +2,270 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Dinesh M | Junior Web Developer</title>
+  <title>Dinesh M | Software Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #334155;
+      --accent: #2563eb;
+      --bg: #f1f5f9;
+      --white: #ffffff;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      background: #f8fafc;
+      background: var(--bg);
       font-family: 'Inter', sans-serif;
-      color: #1e293b;
+      color: var(--secondary);
+      line-height: 1.6;
     }
 
     .resume {
-      max-width: 900px;
+      max-width: 850px;
       margin: 40px auto;
-      background: #ffffff;
-      padding: 50px 60px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      background: var(--white);
+      padding: 60px;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      border-radius: 8px;
+    }
+
+    /* Header Section */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     h1 {
-      font-size: 36px;
-      margin-bottom: 6px;
-      font-weight: 700;
+      font-size: 32px;
+      margin: 0;
+      color: var(--primary);
+      letter-spacing: -0.5px;
     }
 
-    .role {
+    .role-title {
+      font-weight: 500;
+      color: var(--accent);
       font-size: 18px;
-      color: #475569;
-      margin-bottom: 16px;
+      margin-top: 4px;
     }
 
-    .contact {
-      font-size: 14px;
-      line-height: 1.8;
-      color: #334155;
+    .contact-info {
+      text-align: right;
+      font-size: 13px;
     }
 
-    .contact a {
-      color: #2563eb;
+    .contact-info a {
+      color: var(--secondary);
       text-decoration: none;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 2px;
     }
 
-    hr {
-      margin: 30px 0;
-      border: none;
-      border-top: 2px solid #e5e7eb;
-    }
+    .contact-info a:hover { color: var(--accent); text-decoration: underline; }
 
+    /* Section Styling */
+    section { margin-bottom: 35px; }
+    
     h2 {
-      font-size: 20px;
-      margin-bottom: 12px;
-      color: #0f172a;
+      font-size: 14px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
+      color: var(--primary);
+      margin-bottom: 15px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
     }
 
-    p {
-      font-size: 15px;
-      line-height: 1.8;
-      color: #334155;
+    p { margin: 0 0 10px 0; font-size: 14.5px; }
+
+    /* Skills Tags */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-pill {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    /* Job/Project Styling */
+    .item { margin-bottom: 22px; }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 5px;
+    }
+
+    .item-title {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--primary);
+    }
+
+    .item-date {
+      font-size: 13px;
+      color: #64748b;
+      font-style: italic;
     }
 
     ul {
-      margin: 10px 0 0 20px;
+      margin: 8px 0 0 18px;
+      padding: 0;
     }
 
     li {
-      font-size: 15px;
-      margin-bottom: 10px;
-      line-height: 1.7;
-    }
-
-    .job {
-      margin-bottom: 28px;
-    }
-
-    .job-title {
-      font-weight: 600;
-      font-size: 16px;
-    }
-
-    .job-meta {
       font-size: 14px;
-      color: #64748b;
       margin-bottom: 6px;
     }
 
-    .skills-section {
-      margin-bottom: 20px;
+    .tech-stack {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
-    .skills-list {
-      margin-top: 8px;
-      font-size: 15px;
+    .project-link {
+        font-size: 13px;
+        color: var(--accent);
+        text-decoration: none;
+        margin-left: 10px;
+        font-weight: 400;
     }
 
     footer {
-      margin-top: 40px;
       text-align: center;
-      font-size: 13px;
-      color: #64748b;
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 50px;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    @media print {
+      body { background: white; }
+      .resume { box-shadow: none; margin: 0; width: 100%; padding: 40px; }
     }
   </style>
 </head>
 <body>
 
   <div class="resume">
+    <header class="header">
+      <div>
+        <h1>DINESH M</h1>
+        <div class="role-title">Software Developer</div>
+      </div>
+      <div class="contact-info">
+        <strong>+91 8072919240</strong>
+        <a href="mailto:dineshm2816@gmail.com">dineshm2816@gmail.com</a>
+        <a href="https://dinesh-portfolio-liart-nu-ieg406yc8r.vercel.app/" style="color: var(--accent); font-weight: 700;">dineshm (Portfolio)</a>
+        <a href="https://github.com/dinesh-dev1628">github.com/dinesh-dev1628</a>
+        <a href="https://linkedin.com/in/dineshm-dev/">linkedin.com/in/dineshm-dev</a>
+      </div>
+    </header>
 
-    <!-- HEADER -->
-    <h1>Dinesh M</h1>
-    <div class="role">Software Developer | Python Developer</div>
-
-    <div class="contact">
-      Phone: +91 8072919240<br />
-      Email: dineshm2816@gmail.com<br />
-      LinkedIn: <a href="https://www.linkedin.com/in/dineshm-dev/">linkedin.com/in/dineshm</a><br />
-      GitHub: <a href="https://github.com/dinesh-dev1628">github.com/dinesh-dev1628</a> |
-      Portfolio: <a href="https://dineshdx.dev">dineshdx.dev</a>
-    </div>
-
-    <hr />
-
-    <!-- SUMMARY -->
     <section>
       <h2>Professional Summary</h2>
       <p>
-        Software Developer with hands-on experience in Python, JavaScript, and
-        modern web frameworks. Skilled in building responsive, user-friendly
-        applications using React with a strong focus on clean
-        and maintainable code. Experienced in automation using Playwright
-        with Python. Passionate about combining UI development with
-        automation to deliver seamless user experiences.
+        Adaptive Software Developer with specialized experience in <strong>Python, JavaScript, and FastAPI</strong>. 
+        Proven track record in building responsive React interfaces and streamlining workflows through 
+        <strong>Playwright automation</strong>. Focused on writing scalable, maintainable code and bridging 
+        the gap between robust backend logic and seamless user experiences.
       </p>
     </section>
 
-    <hr />
-
-    <!-- SKILLS -->
     <section>
-      <h2>Key Skills</h2>
-
-      <div class="skills-section">
-        <strong>Programming:</strong>
-        <div class="skills-list">Python, JavaScript, HTML, CSS</div>
-      </div>
-
-      <div class="skills-section">
-        <strong>Frameworks:</strong>
-        <div class="skills-list">React, Next.js, FastApi</div>
-      </div>
-
-      <div class="skills-section">
-        <strong>Tools:</strong>
-        <div class="skills-list">Git, GitHub, Docker, Postman</div>
-      </div>
-
-      <div class="skills-section">
-        <strong>Others:</strong>
-        <div class="skills-list">PostgreSQL, RestAPIs, SourceTree</div>
+      <h2>Core Competencies</h2>
+      <div class="skills-container">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">React</span>
+        <span class="skill-pill">FastAPI</span>
+        <span class="skill-pill">PostgreSQL</span>
+        <span class="skill-pill">Playwright</span>
+        <span class="skill-pill">Docker</span>
+        <span class="skill-pill">Git/GitHub</span>
+        <span class="skill-pill">RESTful APIs</span>
       </div>
     </section>
 
-    <hr />
-
-    <!-- EXPERIENCE -->
     <section>
       <h2>Professional Experience</h2>
 
-      <div class="job">
-        <div class="job-title">Freelance Web Developer — Remote</div>
-        <div class="job-meta">September 2024 – Present</div>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Python Developer — Digiclarity</span>
+          <span class="item-date">June 2024 – Present</span>
+        </div>
         <ul>
-          <li>Built responsive web applications and dashboards using React</li>
-          <li>Automated browser tasks and API automation flow using Python and Playwright</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <div class="job-title">Python Developer — Digiclarity, Chennai, India</div>
-        <div class="job-meta">June 2024 – Present</div>
-        <ul>
-          <li>Enhanced frontend layouts and fixed responsive design issues</li>
-          <li>Integrated APIs and wrote unit for backend FastApi scripts</li>
-          <li>Developed automation scripts for internal company teams</li>
+          <li>Engineered automation scripts for internal operations, reducing manual data entry time significantly.</li>
+          <li>Optimized frontend layouts for responsiveness, improving cross-device user retention.</li>
+          <li>Developed and integrated backend endpoints using <strong>FastAPI</strong>, ensuring high-performance data retrieval.</li>
         </ul>
       </div>
     </section>
 
-    <hr />
-
-    <!-- PROJECTS -->
     <section>
-      <h2>Projects</h2>
+      <h2>Selected Projects</h2>
+      
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Professional Portfolio <a href="https://dinesh-portfolio-liart-nu-ieg406yc8r.vercel.app" class="project-link">View Live →</a></span>
+        </div>
+        <p>A high-performance personal site featuring dynamic project filtering and integrated contact handling.</p>
+        <div class="tech-stack">React • Material UI • Framer Motion</div>
+      </div>
 
-      <p><strong>Portfolio Website</strong><br />
-        Tech Stack: React, MUI<br />
-        Designed and developed a personal portfolio showcasing projects, resume,
-        contact form, and project gallery.
-      </p>
-
-      <p><strong>Expense Tracker</strong><br />
-        Tech Stack: Python, PostgreSQL<br />
-        Precision-built Python core for automated finance management.
-      </p>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Automated Expense Tracker</span>
+        </div>
+        <p>Core finance engine that automates expense categorization and generates monthly data visualizations.</p>
+        <div class="tech-stack">Python • PostgreSQL</div>
+      </div>
     </section>
 
-    <hr />
-
-    <!-- EDUCATION -->
     <section>
       <h2>Education</h2>
-      <p>
-        B.Com. in Information System and Management<br />
-        University of Madras, India (2021 – 2024)<br />
-        Relevant Coursework: Programming Languages, Web Development
-      </p>
-      <p>
-        MBA in Logistics and Supply Chain Management<br />
-        University of Madras, India (2025 – Present)
-      </p>
-    </section>
-
-    <hr />
-
-    <!-- CERTIFICATIONS -->
-    <section>
-      <h2>Certifications</h2>
-      <ul>
-        <li>Web Designing – 2024</li>
-        <li>Introduction to Git and GitHub – 2025</li>
-      </ul>
-    </section>
-
-    <hr />
-
-    <!-- LANGUAGES -->
-    <section>
-      <h2>Languages</h2>
-      <p>English (Fluent)<br />Tamil (Native)</p>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">MBA in Logistics & Supply Chain Management</span>
+          <span class="item-date">2025 – Present</span>
+        </div>
+        <p>University of Madras</p>
+      </div>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">B.Com. in Information System & Management</span>
+          <span class="item-date">2021 – 2024</span>
+        </div>
+        <p>University of Madras • <em>Specialized in Web Development & Programming</em></p>
+      </div>
     </section>
 
     <footer>
-      © Dinesh M — Last Updated: Jan 2026
+      Dinesh M — <a href="https://dineshdx.dev" style="text-decoration:none; color:inherit;">dineshdx.dev</a> — Updated Jan 2026
     </footer>
-
   </div>
 
 </body>
